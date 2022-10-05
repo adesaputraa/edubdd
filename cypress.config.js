@@ -1,4 +1,7 @@
+
 const { defineConfig } = require("cypress");
+
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 module.exports = defineConfig({
   e2e: {
@@ -9,7 +12,7 @@ module.exports = defineConfig({
     video : false,
     defaultCommandTimeout : 5000,
     pageLoadTimeout : 10000,
-    ignoreTestFiles : ["*.js", "*.md"],
+    // ignoreTestFiles : ["*.js", "*.md"],
     
     // Load test file
     specPattern: "**/*.feature"
