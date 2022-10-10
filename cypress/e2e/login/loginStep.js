@@ -3,7 +3,7 @@
 
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps"
 import LoginPage from './loginPage';
-const LoginPage = require("../../pages/LoginPage");
+const LoginPage = require("./loginPage");
 
 Given('I open login page', () => {
     LoginPage.visit
