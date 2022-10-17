@@ -1,23 +1,20 @@
-/// <reference types="cypress" />
 
+/// <reference types="cypress"/>
+import { Given, When, And, Then } from 'cypress-cucumber-preprocessor/steps';
+const loginPage = require("../login/LoginPage");
 
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps"
-import LoginPage from './loginPage';
-const LoginPage = require("./loginPage");
 
 Given('I open login page', () => {
-    LoginPage.visit
-})
-
+   loginPage.visit()
+});
 
 When('I submit login', () => {
-    LoginPage.fillUsername('username')
-    LoginPage.fillPassword('password')
-    LoginPage.signIn
+   loginPage.fillUsername("username")
+   loginPage.fillPassword("password")
+   loginPage.signIn()
 })
 
-
 Then('I should see homepage', () => {
-    cy.wait(1000)
-    cy.get('#account_summary_tab').should('be.visible')
+   cy.wait(1000)
+   cy.get('#account_summary_tab').should('be.visible')
 })

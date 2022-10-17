@@ -7,6 +7,7 @@ const SIGN_IN = 'input[name="submit"]'
 class LoginPage{
     static visit() {
         cy.visit(URL)
+        cy.url().should('include', 'login.html')
     }
 
     static fillUsername(username){
@@ -18,7 +19,7 @@ class LoginPage{
     }
 
     static signIn(){
-        cy.get(SIGN_IN).click()
+        cy.get(SIGN_IN).click
     }
 }
 
