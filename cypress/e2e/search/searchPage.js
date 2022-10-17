@@ -1,17 +1,17 @@
-const URL = 'http://zero.webappsecurity.com/index.html'
-const INPUT = "#searchTerm"
-const ENTER = 'online {enter}'
+// const URL = 'http://zero.webappsecurity.com/index.html'
+// const INPUT = "#searchTerm"
+// const ENTER = 'online {enter}'
 
-class SearchPage{
-    static visit() {
-        cy.visit(URL)
-    }
+// class SearchPage{
+//     static visit() {
+//         cy.visit(URL)
+//     }
 
-    static fillSearch(){
-        cy.get(INPUT).type(ENTER)
-    }
+//     static fillSearch(){
+//         cy.get(INPUT).type(ENTER)
+//     }
 
-}
+// }
 
 
-export default SearchPage
+// export default SearchPage

@@ -1,11 +1,11 @@
 
 /// <reference types="cypress"/>
-import { Given, When, And, Then } from 'cypress-cucumber-preprocessor/steps';
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 const loginPage = require("../login/LoginPage");
 
 
 Given('I open login page', () => {
-   loginPage.visit()
+   loginPage.visitLogin()
 });
 
 When('I submit login', () => {
@@ -15,6 +15,10 @@ When('I submit login', () => {
 })
 
 Then('I should see homepage', () => {
-   cy.wait(1000)
-   cy.get('#account_summary_tab').should('be.visible')
+
+   loginPage.visitAccount()
+   cy.contains('username').click()
+   cy.get('#logout_link').click()
+   cy.url().should('include', 'index.html')
+   loginPage.fillSearch()
 })
